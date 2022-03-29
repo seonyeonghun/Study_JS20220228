@@ -91,11 +91,11 @@
 	//출력
 	document.write(yourName+", "+yourHeight+"cm, "+yourWeight+"kg");
 	
-	let BMI = yourWeight / (yourHeight * yourHeight);
+	let BMI = yourWeight / ((yourHeight * yourHeight)/10000);
 	
 	// backtick, grave accent, 2 more.. : template literal
 	
-	console.log(`BMI지수 : ${BMI*10000}kg/㎡`);
+	console.log(`BMI지수 : ${BMI}kg/㎡`);
 	
 	// 소숫점 이하 첫째자리 : Math 객체 .round() , .ceil(), .floor()
 	
