@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- <script>
+//p.468 제이쿼리를 이용한 태그 제어
+$(function(){
+	$("button").click(function(){
+		$("#displayArea")
+		.html("<img src='https://picsum.photos/200/200' alt='가짜사진'>");
+	}) 
+})
+</script> -->
+<style>
+:root {
+	--border-color: #6699FF
+}
+div#displayArea {
+	width: 200px;
+	height: 200px;
+	border: 5px double var(--border-color);
+}
+</style>
+</head>
+<body>
+<!-- p.469 참고! -->
+<div id="displayArea">이곳의 내용 변경</div>
+<button id="show">표시</button>
+<script>
+// $ vs .querySelector() or .getElementById()
+
+var showBTN = document.querySelector("#show"); // 대상을 변수에 할당
+showBTN.addEventListener("click", function(){ // showBTN 클릭하면, 아래코드 실행
+	var displayAREA = document.querySelector("#displayArea");
+	displayAREA.innerHTML = "<img>태그 위에서 쓴것 복사해서 넣어요!";
+})
+
+// old한 방식 : document.getElementById("show");
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

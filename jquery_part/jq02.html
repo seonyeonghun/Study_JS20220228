@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>제이쿼리 셀렉터(selector)</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="jq02.css" />
+</head>
+<body>
+	<h1>제이쿼리</h1>
+	<p>p.473~476 페이지 참고</p>
+	<!-- step1. p.474 HTML 작성 -->
+	
+	<div id="picArea">
+		<!-- img[src=https://picsum.photos/200/200]#pic$.c$*4 -->
+		<img id="pic1" class="c1" src="https://picsum.photos/200/200" alt="pic1">
+		<img id="pic2" class="c2" src="https://picsum.photos/200/200" alt="pic2">
+		<img id="pic3" class="c3" src="https://picsum.photos/200/200" alt="pic3">
+		<img id="pic4" class="c4" src="https://picsum.photos/200/200" alt="pic4">
+	</div>
+	<div id="btnArea">
+		<button id="b1">id="pic1"인 이미지 숨기기</button>
+		<button id="b2">class="c1"인 이미지 숨기기</button>
+		<button id="b3">모든 이미지 숨기기</button>
+		<button id="b4">숨기기 취소</button>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="jq02.js"></script>
+</body>
+</html>

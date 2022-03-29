@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* p.473~474 */
+div {
+	margin: 10px;
+	padding: 10px
+}
+
+div#picArea {
+	width: 500px;
+	height: 120px;
+	background-color: dodgerblue; /* 교재에는 이미지, 컬러로 대체 */
+}
+
+img {
+	margin: 10px;
+	width: 90px;
+	height: 80px;
+	border: 2px solid black
+}
+
+.c1 {
+	border-radius: 50%;
+}
+
+.c2 {
+	box-shadow: 10px 10px 5px #888888;
+}
