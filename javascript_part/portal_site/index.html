@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>포털 사이트</title>
+</head>
+<body>
+	<h1>자주 사용하는 포털사이트</h1>
+	<p>포털사이트를 입력받고, 해당 사이트로 이동해보자!</p>
+	
+	<script>
+		// .prompt() : 반환값이 string
+		let site = prompt("자주 사용하는 포털은?","예) 네이버")
+		
+		let url; // 사이트 주소 저장변수
+		
+		switch(site) {
+			case "구글": url = "google.com";
+			break;
+			case "네이버": url = "naver.com";
+			break;
+			case "다음": url = "daum.net";
+			break;
+			case "줌": url = "zoom.com";
+			break;
+			case "빙": url = "bing.com";
+			break;
+			case "네이트": url = "nate.com";
+			break;
+			default: alert("알려진 포털사이트 \n이름을 입력해야합니다.")
+		}
+		
+		if(url) {
+			// 웹브라우저의 구성요소
+			// location 객체의 href 프로퍼티 = 이동할 포털주소 (입력)
+			location.href = "http://www."+url;
+			
+			// 새 창(=새 탭)으로 열기 : 요즘!! 새 창을 차단..ㅠ			
+			
+			// window.open("http://www"+url)
+			// window.close();			
+		}
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

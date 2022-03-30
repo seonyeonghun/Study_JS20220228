@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>자바스크립트</title>
+</head>
+<body>
+	<h1>제어문</h1>
+	<h2>if 조건문</h2>
+	<ul>
+		<li>단순if</li>
+		<li>if~else</li>
+		<li>if~else if</li>
+		<li>중첩 if</li>
+	</ul>
+	<script>
+		/* 다음 조건은 항상 false 입니다.
+
+			1) 0
+			2) "(빈문자)"
+			3) null
+			4) undefined
+
+			※ 자바스크립트 변수만 선언하면 자동으로 undefined 상태
+		*/
+		// 1. 단순 if : 조건이 true일때만 실행
+		if(조건1) 실행문;
+		
+		if(조건2) {
+			실행문;
+		}
+		
+		if(4 > 3) alert("4는 3보다 크다");
+		
+		
+		// 2. if ~else : 조건이 true일때, false일때 각각 실행
+		
+		if(조건3){
+			실행문1; // true
+		} else {
+			실행문2; // false
+		}
+		
+		// 3. if ~ else if : 조건이 여러개일때
+		
+		if(조건1) {
+			실행문1;
+		} else (조건2) {
+			실행문2;
+		} else (조건3) {
+			실행문3;
+		} else {
+			실행문4;
+		}
+		
+		// 4. 중첩 if : if 구문 내에 또 다른 if구문
+		
+		if(조건1) {
+			if(조건2){
+				실행문2-1;
+			} else {
+				실행문2-2;
+			}
+		} else {
+			실행문1;
+		}
+		
+		// 홀수짝수 게임
+		// 사용자에게 입력 --> .prompt()
+		// 홀수/짝수 : % 
+		// if 조건문 활용 --> 홀수/짝수 판정!
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

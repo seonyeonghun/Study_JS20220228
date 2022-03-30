@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>제어문</title>
+</head>
+<body>
+	<h1>switch case</h1>
+	<p>if 조건문과 switch ~ case은 제어문 중 하나이고,
+	범위가 좁을때 (몇가지 없는 선택지) 사용하는 선택문</p>
+	<script>
+		/* let choice = prompt("좋아하는 숫자를 입력하세요!","예)1,3,5 중 하나를 입력") */
+
+		let site = prompt("자주 이용하는 포털사이트는?","예)구글");
+		
+		switch(site){
+			case "구글": 실행문1;
+			break;
+			case "네이버": 실행문2;
+			break;
+			case "다음": 실행문2;
+			break;
+			default: alert("구글, 다음,네이버 중에서 고르세요");		
+		}
+		// 조건/판단 범위가 협소할때 switch <--> if 구문 사용가능
+		
+		if(site=="구글") {
+			실행문1;
+		} else if(site == "다음") {
+			실행문2;
+		} else if(site == "네이버") {
+			실행문3;
+		} else {
+			alert("구글, 다음,네이버 중에서 고르세요")
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

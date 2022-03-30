@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>홀수짝수 게임</title>
+</head>
+<body>
+	<h1>홀수짝수 판정</h1>
+	<p>숫자를 입력하면 홀수인지 짝수인지 판정하는 게임입니다.</p>
+	<script>
+		let userInput = prompt("수를 하나 입력해보세요");
+		/* 항상 false
+		1) 0
+		2) "(빈문자)"
+		3) null
+		4) undefined */		
+		
+		if(userInput % 2) {
+			alert("홀수입니다.")
+		} else {
+			alert("짝수입니다.")			
+		}
+	</script>
+</body>
+</html>
