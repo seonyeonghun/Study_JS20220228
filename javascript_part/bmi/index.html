@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>BMI(비만도 테스트)</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<h1>BMI 테스트</h1>
+	<h2>비만도 측정(BMI 지수)</h2>
+	<p>
+		BMI를 이용한 비만도 계산은 자신의 몸무게를 키의 제곱으로 나누는 것으로 공식은 kg/㎡.<br>
+		BMI가 18.5 이하면 저체중 ／ 18.5 ~ 22.9 사이면 정상 ／ 23.0 ~ 24.9 사이면 과체중 ／ 25.0 이상부터는 비만으로 판정.<br>
+		ex) 키 170㎝에 몸무게 73kg이면, 계산식 : 73 / (1.7×1.7) = 25.26 → 과체중
+	</p>
+	<div class="form-wrap">
+		<form id="bmi_form" autocomplete="off">
+			<label for="user_height">신장</label>
+			<input type="text" id="user_height" />
+			<label for="user_weight">체중</label>
+			<input type="text" id="user_weight" />
+			<input type="submit" value="측정하기">
+			<input type="reset" value="초기화">
+		</form>		
+	</div>
+	<div id="result_msg"></div>
+	<script src="script/main.js"></script>
+</body>
+</html>
