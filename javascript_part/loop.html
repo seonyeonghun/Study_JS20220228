@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>제어문</title>
+</head>
+<body>
+	<h1>반복문</h1>
+	<ul>
+		<li>while</li>
+		<li>do ~ while</li>
+		<li>for</li>
+	</ul>
+	<!-- 
+	<h2>while 반복문</h2>
+	<script>
+	// 구구단 작성 : 2 x 1 = 2 , .....
+	let dan = prompt("알고싶은 구구단 수 입력하세요");
+	let i = 1
+	let danSum = 0;
+	while(i < 10){
+		document.write(dan+" x "+i+" = "+(dan*i),"<br>")
+		danSum += dan*i;
+		i++;
+	}
+	document.write("===================================","<br>")
+	document.write(dan+"구구단의 합 : "+danSum,"<br>")
+		
+	</script>
+
+	 <h2>do~while 반복문</h2>
+	 <p>조건식이 거짓이어도 한번은 반드시 실행하는 반복문</p>
+	 
+	<script>
+	let num = 1000;
+	do {
+		document.write(num);
+	} while (num >= 2000)		
+	</script>
+	-->	
+	<h2>for 반복문</h2>
+	<script>
+		// 구구단 출력
+		/* let dan = prompt("몇 단?");
+		
+		for(let i=1;i<10;i++){
+			document.write(`<p>${dan} x ${i} = ${dan*i}</p>`);
+		} */
+		
+		// 중첩 for
+		for(let i=1;i<=5;i++){
+			for(let j=1;j<=5;j++){
+				document.write(`<p>${i}행 ${j}열</p>`)
+			}
+		}
+	</script>
+</body>
+</html>

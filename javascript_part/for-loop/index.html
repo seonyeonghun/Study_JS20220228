@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>for 반복문 예제</title>
+	<style>
+	table, td {
+		border: 1px solid #333;
+		border-collapse: collapse;
+	}
+	td {
+		padding: 1em;
+	}
+	</style>
+</head>
+<body>
+	<h1>for loop</h1>
+	<p>중첩 for 를 이용해 숫자 1~25까지 출력, 테이블과 함께! 작성
+	출력해보세요</p>
+	<script>
+		// 1부터 25까지 반복하여 출력
+		// 최종 출력은 table을 이용하여 출력, 간단하게 CSS
+		// 5행 5열의 테이블과 함께 1~25까지 숫자를 출력해보세요
+		let num = 1;
+		document.write("<table id='tb1'>");
+		for(let i=1; i<=5;i++){
+			document.write("<tr>");
+			for(let j=1;j<=5;j++){
+				document.write(`<td>${num}</td>`);
+				num++;
+			}
+			document.write("</tr>");		
+		}
+		document.write("</table>");
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

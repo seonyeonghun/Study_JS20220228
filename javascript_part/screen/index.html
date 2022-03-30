@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>미디어쿼리 vs 자바스크립트</title>
+</head>
+<body>
+	<h1>자바스크립트로 스크린을 감지</h1>
+	<p>디바이스의 종류를 구분하는 건 아님,</p>
+	<div class="hero">
+		<img src="https://picsum.photos/id/237/2000/800" alt="lorem picsum">		
+	</div>
+	<div class="banner">
+		배너광고
+	</div>
+	
+	<script>
+	const heroDIV = document.querySelector(".hero")
+	
+	window.addEventListener("resize", observer)
+	
+	function observer(){
+		let vw = window.innerWidth; // viewport width
+		/* console.log(vw, typeof vw) */
+		if(vw <= 480) {
+			heroDIV.style.display = "none";
+			/* document.body.style.backgroundColor = "gold" */
+		} else {
+			/* document.body.style.backgroundColor = "white" */
+			heroDIV.style.display = "block;";
+		}
+	}
+	</script>
+</body>
+</html>
