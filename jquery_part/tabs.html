@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>UI컴포넌트</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+	/* 공통 */
+	a, a:link {
+		text-decoration: none;
+	}
+	#tabs {
+		width: 500px;
+	}
+	.items {
+		height: 60px;
+		display: flex;
+		align-items: flex-end; 
+		column-gap: 1rem;
+		list-style: none;
+		background: #4A94D8
+	}
+	.items li {
+		padding: .75rem 1rem;
+		color: white;
+	}
+	.items li.active {
+		background: white;
+		color: blue;
+	}
+	.items li a {
+		color: inherit;
+	}
+	.lists ul {
+		display: none
+	}
+	.lists ul.showing {
+		display: block;
+	}	
+	</style>
+</head>
+<body>
+	<h1>탭(tabs)</h1>
+	<div id="tabs">
+		<ul class="items">
+			<li>
+				<a href="#">보도/뉴스</a>
+			</li>
+			<li>
+				<a href="#">질문답변</a>
+			</li>
+			<li>
+				<a href="#">상담요청</a>
+			</li>
+		</ul>
+		<div class="lists">
+			<ul class="showing">
+				<li>보도/뉴스 항목 1입니다.</li>
+				<li>보도/뉴스 항목 1입니다.</li>
+				<li>보도/뉴스 항목 1입니다.</li>
+				<li>보도/뉴스 항목 1입니다.</li>
+				<li>보도/뉴스 항목 1입니다.</li>
+			</ul>
+			<ul>
+				<li>질문답변 항목 1입니다.</li>
+				<li>질문답변 항목 1입니다.</li>
+				<li>질문답변 항목 1입니다.</li>
+				<li>질문답변 항목 1입니다.</li>
+				<li>질문답변 항목 1입니다.</li>
+			</ul>
+			<ul>
+				<li>상담요청 항목 1입니다.</li>
+				<li>상담요청 항목 1입니다.</li>
+				<li>상담요청 항목 1입니다.</li>
+				<li>상담요청 항목 1입니다.</li>
+				<li>상담요청 항목 1입니다.</li>
+			</ul>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+	$(function(){
+		const items = $(".items li");		
+		const lists = $(".lists ul");
+		items.eq(0).addClass("active")
+		
+		items.click(function(){
+			if(!$(this).hasClass("active")){
+				let ind = $(this).index();
+				$(this).addClass("active").siblings().removeClass("active");
+				lists.eq(ind).addClass("showing").siblings().removeClass("showing");
+			};
+		})
+	})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

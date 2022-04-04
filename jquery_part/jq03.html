@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>제이쿼리</title>
+	<!--	<script src="//code.jquery.com/jquery-latest.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<style>
+		*,
+		*::before,
+		*::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box
+		}
+		#popup {
+			display: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background: rgba(0,0,0,.5);
+			color: white;
+			z-index: 1000;
+		}
+		.popup-wrap {
+			background: slateblue;
+			padding: 50px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#b5 {
+			background: black;
+			color: white;
+			position: absolute;
+			right: 50px;
+			border: 0;
+			padding: 10px 20px;			
+		}
+
+	</style>
+</head>
+<body>
+	<h1>jquery를 사용한 자바스크립트 사용</h1>
+	<h2>p.478</h2>
+	<p>이미지 표시</p>
+	<!-- 	button#b1{버튼레이블 변경} -->
+	<button id="b1">버튼레이블 변경</button>
+	<div id="display"></div>
+	<button id="b2">버튼</button>
+	<button id="b3">이미지 숨기기</button>
+	<div id="popup">
+		<div class="popup-wrap">
+			<h2>서비스 점검중</h2>
+			<p>서버 저장장치 교체로 인한 서비스 점검중입니다. 이용에 불편을 드려 죄송합니다.</p>
+			<p>예상 소요시간 : 약 2시간(15:00 ~ 17:00)</p>
+			<button id="b5">닫기</button>
+		</div>
+	</div>
+	<button id="b4">팝업창 열기</button>
+	
+	
+	<script>
+	const imgURL = "https://picsum.photos/id/10/300/400";
+	const pTags = $("p");
+	$(function(){
+		$("#b1").click(function(){ // #b1인 요소를 클릭하면 할일 {...}을 수행해!
+// 			console.log("종류 : "+typeof pTags)
+// 			console.dir(pTags)
+			$("#b2").text(pTags.eq(0).text())
+			// .eq(인덱스번호) : 탐색 선택자
+		})
+		$("#b2").click(function(){ // #b1인 요소를 클릭하면 할일 {...}을 수행해!
+			$("#display").html(`<img src="${imgURL}" alt="샘플">`);
+		})
+		// 이미지 숨기기 클릭시 이미지를 어떻게든? 숨겨보세요! (단, 엑박을 의미하지 않음)
+		$("#b3").click(function(){
+			$("#display img").css({
+				width:0,
+				height:0
+			})
+		})
+		$("#b4").click(function(){
+			$("#popup").css("display","block");
+// 			$(".popup-wrap").addClass("scalable"); // 클래스 추가 메소드
+		})
+		$("#b5").on({
+			click: function(){
+				$("#popup").css("display","none")
+			},
+			mouseleave: function(){
+				alert("포커스를 벗어났습니다.")
+			}
+		})
+	})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
