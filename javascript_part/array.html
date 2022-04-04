@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>객체</title>
+	<title>내장객체 &gt; 배열객체</title>
+	<style>
+	body {
+		font-size: 16px;
+	}
+	</style>
 </head>
 <body>
+	<button id="plus">&plus;</button>
+	
+	<button id="minus">&minus;</button>
+	
+	<button id="change">배경색 바꾸기</button>
 	<h1>자바스크립트 객체</h1>
 	<p>객체(Object)란 프로퍼티나 메소드를 포함하는 자료형</p>
 	<ul>
@@ -15,8 +25,6 @@
 	<p>내장객체로 변수 vs 배열의 차이는 데이터를 하나만 저장하는것과
 	여러개의 데이터를 저장하는 것의 차이</p>
 	
-	<button id="change">배경색 바꾸기</button>
-	
 	<script>
 	// 인덱스 : 배열의 데이터가 저장된 번지(Address), 배열명[인덱스번호]
 	
@@ -25,12 +33,49 @@
 	
 	let colors = ["white","gold","tomato","aqua"];
 	
+	// 프로퍼티 : .length (배열의 길이값 반환)
+	console.log("갯수 : "+colors.length)
+	
+	// 메소드 : .pop(), push(), .shift(), .unshift(), .slice(), .splice()
+	let color1 = colors.pop()
+	console.log("마지막 요소 : "+color1)
+	
+	
+	
+	
+	
+	
+	
 	const changeBTN = document.querySelector("#change");
+	const plusBTN = document.querySelector("#plus");
+	const minusBTN = document.querySelector("#minus");
 	const bodyTag = document.querySelector("body");
-
+	
+	let defaultSize = 16;
+	
 	let index = 0;
 	
-	changeBTN.addEventListener("click", colorChange);
+	changeBTN.addEventListener("click", colorChange); // colorChange 함수를 호출
+	
+	plusBTN.addEventListener("click", function(){ // web unit: px		
+		bodyTag.style.fontSize=`${defaultSize}px`	
+		if(defaultSize < 20) {
+			defaultSize++;
+		} else {
+			alert("특정 값 이상으로 선택하여 글자크기가 초기화됩니다.")
+			defaultSize = 16
+		}
+	});
+	
+	minusBTN.addEventListener("click", function(){ // web unit: px		
+		bodyTag.style.fontSize=`${defaultSize}px`	
+		if(defaultSize < 10) {
+			defaultSize--;
+		} else {
+			alert("초기화됩니다.")
+			defaultSize = 16
+		}
+	});
 	
 	function colorChange(){
 		if(index >= colors.length) {

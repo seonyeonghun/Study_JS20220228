@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>내장객체 &gt; 오브젝트</title>
+</head>
+<body>
+	<h1>오브젝트</h1>
+	<p>키(key)와 값(value)로 프로퍼티를 설정할 수 있고, 내부에 함수
+	를 (=메소드)를 가질 수 있는 자료형</p>
+	
+	<script>
+	// 객체 리터럴 : {}
+	const person = {
+		name: "홍길동",
+		gender: "남성",
+		info(){
+			console.log(`이름 : ${this.name}, 성별: ${this.gender}`)
+		}
+	};
+	
+	// 값 접근(=키에 접근하면 값이 나옴)
+	console.log(person.name)
+	console.log(person['name']); // 배열처럼?
+
+	// 생성자 객체
+
+	// Object --> 내장객체 생성자
+	const human = new Object();
+	
+	human.bloodType = "AB";
+	human.birthDate = new Date(); // 시간,날짜 객체(현재시간 반환)
+	human.sayHello = function(){
+		console.log("안녕하세요!")
+	}
+	
+	console.log(human.bloodType);
+	console.log(human.birthDate);
+	console.log(human.sayHello());
+			
+	// 사용자가 만드는 객체 생성자 (함수)			
+	const gildong = new Person("길순이","여성");
+	
+	function Person(uname, ugender){
+		this.username = uname;
+		this.usergender = ugener;
+		this.info=function(){
+			console.log(`이름 : ${this.name}, 성별: ${this.gender}`)
+		}
+		
+	}			
+			
+			
+			
+			
+	</script>
+</body>
+</html>

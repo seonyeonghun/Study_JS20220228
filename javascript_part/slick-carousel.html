@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>슬릭 캐러셀 예제</title>
+<!-- step2. CDN주소 복사 or DOWNLOAD 후 연결-->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+<body>
+	<!-- https://kenwheeler.github.io/slick -->
+	<!-- step1. 클래스명 지정, 내용(사진) 입력 -->
+	<div class="carousel">
+		<div>
+			<img src="https://picsum.photos/id/10/600/300" alt="lorem picsum">
+		</div>
+		<div>
+			<img src="https://picsum.photos/id/2/600/300" alt="lorem picsum">
+		</div>
+		<div>
+			<img src="https://picsum.photos/id/37/600/300" alt="lorem picsum">
+		</div>
+		<div>
+			<img src="https://picsum.photos/id/24/600/300" alt="lorem picsum">
+		</div>
+		<div>
+			<img src="https://picsum.photos/id/25/600/300" alt="lorem picsum">
+		</div>
+		<div>
+			<img src="https://picsum.photos/id/67/600/300" alt="lorem picsum">
+		</div>
+	</div>
+	<!-- step3. jQuery 연결 -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<!-- 
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	-->
+	
+	<!-- step4. slick initialze  -->
+	<script>
+	// step5. .your-class <---> .carousel [캐러샐 클래스명]
+	$(document).ready(function(){
+	  $('.carousel').slick({
+		  dots: true,
+		  infinite: true,
+		  speed: 300,
+		  slidesToShow: 1,
+		  centerMode: true,
+		  variableWidth: true,
+		  autoplay: true,
+		  autoplaySpeed: 1000,
+	  });
+	});
+		
+	</script>
+</body>
+</html>

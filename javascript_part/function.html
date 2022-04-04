@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>함수</title>
+</head>
+<body>
+	<h1>함수</h1>
+	<p>자바스크립트 자료형 중 하나인 함수, 일급객체라고도 함</p>
+	<p>변수 vs 함수 : 데이터를 저장 vs 코드를 저장</p>
+	<p>클래스 -> 생성자 함수를 만들어서 객체를 생성할때도 있다.</p>
+	<p>HTML : 구조, CSS : 디자인, SCRIPT : 기능(=function)</p>
+	<script>
+	// 내장객체 , 함수(=메소드)
+	// 배열객체, 함수(=메소드)   : .pop(), .push(), .shift(), .unshift()
+	
+	// 선언식 함수
+	/*
+	function 함수이름(){
+		하는 일(=코드)
+	}
+	
+	함수이름(); // 호출
+	
+	let abc = 10; // 전역변수
+	// 익명 함수
+	let 참조변수 = function(){
+		let abc = 100; // 지역변수
+		let aa = function(){
+			// 지역 함수
+		}	
+	}
+	
+	참조변수(); // 호출
+	*/
+	// 선언식 함수 vs 익명함수 차이 : 호출 시점(위치?)
+	// 호이스팅(hoist) 적용유무 차이! 익명함수는 호출을 선언 후~!
+	// 호이스트, 호이스팅 : 낚시바늘->물속의 고기를 낚아서 올리는~
+	
+	
+	// 덧셈 함수 만들기
+	// 함수 내부에 전달하는 변수 : 매개변수
+	
+	
+	// Q.plus를 매개변수 제한없이 연산할때?!	
+	function plus(a, b){
+		
+	}
+	
+	
+	
+	function multi(){
+		let result = 1;
+		for(let i=0;i<arguments.length;i++){
+			result *= arguments[i]	
+		}
+		return result 
+	}
+	
+	
+	// 콜백함수 : 함수처리가 끝나면 다음함수를 실행하는 함수
+    //            매개변수로 전달되는 또 다른 함수	            
+	
+	/*
+    
+    // 라면끓이기
+	// 반복적으로 함수를 실행, setInterval(함수, 밀리초)
+	function echo(str, callback){		
+		setTimeout(function(){
+			console.log(str);
+			callback();
+		},1000 * Math.random())
+		// ms : milli seconds 1/1000
+	}	
+		
+	function callback(){
+		console.log("------- END --------")
+	}
+	echo("라면 구입하기", callback)
+	echo("물, 냄비 준비하기", callback)
+	echo("물 끓이기", callback)
+	echo("3분 기다렸다가, 분말스프/야채스프/면 넣기", callback)
+	echo("2분 더 끓이기", callback)
+	echo("불끄고 먹을 준비하기", callback)
+	echo("맛나게 먹고 치우기", callback)
+	
+	let i = 0
+	let intervalID = setInterval(function(){
+		i++;
+		console.log(i)
+		
+	},3000);
+	
+	setTimeout(function(){
+		// interval해지!
+		clearInterval(intervalID);
+	},10000)
+	
+	// 3초마다 i를 1씩 증가, 출력 (반복)
+	
+	*/
+	
+	
+	// 객체생성을 위한 생성자 함수
+	// 객체 생성방법 I,II
+	// 객체 내부 프로퍼티(=변수), 메소드(=함수)
+	
+	const person = {
+		name: "홍길동",
+		gender: "남성",
+		info(){
+			console.log(`이름 : ${this.name}, 성별: ${this.gender}`)
+		}
+	}; // I.리터럴 방식
+	
+	// II. 생성자 (함수) 방식
+	
+	const obj2 = new Object(); 
+	
+	const gildong = new Person("길순이","여성");
+	
+	function Person(uname, ugender){
+		this.username = uname;
+		this.usergender = ugener;
+		this.info=function(){
+			console.log(`이름 : ${this.name}, 성별: ${this.gender}`)
+		}
+		
+	}
+	
+	// 자바스크립트 클래스가 없었다...!   vs   프로토타입 (prototype)
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

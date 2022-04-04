@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>모바일 샵</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<style>
+	/* linear-gradient, radial-gradient : css3 + vendor prefix */
+	/* transform, transition, animation */
+	body {
+		height: 100vh;
+		background: linear-gradient(to bottom, #8BD5FF, #800DF3, #6A08CC)	
+	}
+	h1,h2 {
+		text-align: center;
+		color: white
+	}
+	/* rem : root element 글자 크기 기준 (html tag)
+		em : parent element 글자 크기 기준 / 자기 자신의 글자크기 */
+	h1 {
+		font-size: 2rem; /* 1em */
+		margin: 2rem 0;
+	}
+	h2 {
+		font-size: 1rem;
+		margin: 1rem 0
+	}
+	ul {
+		display: flex;
+		justify-content: center;
+		column-gap: 1rem;
+	}
+	button {
+		padding: 1rem 0;
+		width: 150px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px 5px rgba(0,0,0,.4)
+	}
+	#slides {
+		position: relative;
+		width: 500px;
+		height: 400px;
+		margin: 50px auto;		
+	}
+	.img {
+		height: 400px;
+		width: 500px;
+		background: url("shop-items-bg.png") no-repeat 0 0;
+		transition: all ease-in-out .3s
+	}
+	#prev {
+		position: absolute;
+		left: -25px;
+		width: 50px;
+		height: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0,0,0,.5);
+		color:white		
+	}
+	#next {
+		position: absolute;
+		right: -25px;
+		width: 50px;
+		height: 50px;
+		background: rgba(0,0,0,.5);
+		top: 50%;
+		transform: translateY(-50%);
+		color:white		
+	}
+	</style>
+</head>
+<body>
+	<h1>모바일 샵</h1>
+	<h2>스마트 기기 온라인 반값 모바일 샵, 오늘의 할인을 확인하세요!</h2>
+	<ul>
+		<li><button class="bt1">스마트폰</button></li>
+		<li><button class="bt2">태블릿PC</button></li>
+		<li><button class="bt3">블루투스이어폰</button></li>
+		<li><button class="bt4">스마트워치</button></li>
+	</ul>
+	<div id="slides">   <!-- 인라인 이벤트 핸들러 -->
+		<div id="prev" onclick="prevImgRotation()">이전</div>
+		<div id="next">다음</div>
+		<div class="img"></div>
+	</div>	
+	<script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+	<script>	
+		// 각 버튼 클릭시(click event) 해당 이미지가 보이도록 좌표값을 설정
+		// 위치값 변화에 따른 모션(transition)
+		
+		// 버튼 지정
+		
+		const bt1 = document.querySelectorAll("button")[0]
+		const bt2 = document.querySelectorAll("button")[1]
+		const bt3 = document.querySelectorAll("button")[2]
+		const bt4 = document.querySelectorAll("button")[3]
+		
+		const prevBTN = document.querySelector("#prev") 
+		const nextBTN = document.querySelector("#next") 
+		
+		const IMG = document.querySelector(".img")
+		
+		nextBTN.addEventListener("click", imgNext)
+		
+		const imgWIDTH = 500
+		let imgCURR = 0
+		
+		function imgNext(){
+			let nextIND = imgCURR + 1;
+			if(nextIND >= 4) nextIND = 0;
+			let newPOS = -imgWIDTH * nextIND;
+			imgCURR = nextIND;
+			// 단위값 생략시 브라우저 스타일 반영안됨!
+			IMG.style.backgroundPositionX = newPOS+"px"; 
+			
+		}
+		
+		// 이전으로 이동하는 함수 imgPrev()는 직접 작성해보세요
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
