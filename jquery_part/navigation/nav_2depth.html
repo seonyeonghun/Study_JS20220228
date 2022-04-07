@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>제이쿼리 내비게이션</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	
+	<style>
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		font: 16px/1.5 "Nanum Gothic", sans-serif;
+		color: #333;
+		height: 3000px; /* 내용이 많이 작성되었다고 가정해봅시다 */
+	}
+	a, a:link {
+		text-decoration: none;
+		color: inherit
+	}
+	h1 {
+		text-align: center;
+		margin: 50px 0;
+		font-size: 1.750rem
+	}
+	.fixed-top {
+		position: fixed;
+		width: 100%;
+		zIndex: 0;
+		boxShadow: 0 3px 5px 0 rgba(0,0,0,.4);
+		transition: all .3s ease-in-out
+		/* transition vs animation? 중간과정 자동생성 vs 처음,중간,끝 생성 */
+	}
+	.header-outer {
+		background: white
+	}
+	header > nav {
+		background: slateblue;
+		color: white;
+		box-shadow: 0 3px 5px 0 rgba(0,0,0,.4)
+	}
+	#gnb { /* flex-container */
+		max-width: 1190px;
+		height: 50px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+	}
+	#gnb > li { /* flex-item */
+		flex: 1;
+		text-align: center;
+		position: relative;
+		height: 100%;
+		line-height: 50px;
+	}
+	#gnb > li.on {
+		background: darkslateblue;
+	}
+	#gnb > li a {
+		display: block;		
+	}
+	.lnb {
+		display: none;
+		position: absolute;
+		width: 100%;
+		top: 100%;
+		background: slateblue;
+	}
+	
+	article {
+		max-width: 1190px;
+		height: 1000px;
+		margin: 0 auto;		
+	}
+	article:nth-of-type(odd){
+		background: gold
+	}
+	article:nth-of-type(even){
+		background: tomato
+	}
+	
+	
+	#top {
+		position: fixed;
+		right: 5%;
+		bottom: 5%;
+		width: 50px;
+		height: 50px;
+		background: black;
+		color: white;
+		z-index: 1000; /* unit x */
+	}
+	</style>
+</head>
+<body>
+	<div class="header-outer">
+		<h1>2단 내비게이션</h1>
+		<header>
+			<nav>
+				<ul id="gnb">
+					<li><a href="#">서비스</a>
+						<ul class="lnb">
+							<li><a href="#intro">개요</a>
+							<li><a href="#photo">사진인화</a>
+							<li><a href="#album">앨범제작</a>
+							<li><a href="#video">영상제작</a>
+						</ul>
+					</li>
+					<li><a href="#">인증서</a></li>
+					<li><a href="#">회사소개</a>
+						<ul class="lnb">
+							<li><a href="ceo.html">대표인사말</a>
+							<li><a href="vision.html">연혁/비전</a>
+							<li><a href="partners.html">파트너사</a>
+							<li><a href="map.html">오시는길</a>
+						</ul>
+					</li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<div class="hero">
+		<img src="https://picsum.photos/id/77/1920/300" alt="lorem picsum">		
+	</div>
+	<section id="main">
+		<h2 class="d-none">본문</h2>
+		<article>
+			<h3 id="intro">개요</h3>
+			<p>본 서비스는 블라블라... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis inventore eius dolorem laborum voluptatem omnis excepturi iusto porro in dolor molestiae fugiat quo voluptatum itaque deserunt possimus quidem nulla.</p>
+		</article>
+		<article>
+			<h3 id="photo">사진인화</h3>
+			<p>본 서비스는 블라블라... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis inventore eius dolorem laborum voluptatem omnis excepturi iusto porro in dolor molestiae fugiat quo voluptatum itaque deserunt possimus quidem nulla.</p>
+		</article>
+		<article>
+			<h3 id="album">앨범제작</h3>
+			<p>본 서비스는 블라블라... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis inventore eius dolorem laborum voluptatem omnis excepturi iusto porro in dolor molestiae fugiat quo voluptatum itaque deserunt possimus quidem nulla.</p>
+		</article>
+		<article>
+			<h3 id="video">영상제작</h3>
+			<p>본 서비스는 블라블라... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis inventore eius dolorem laborum voluptatem omnis excepturi iusto porro in dolor molestiae fugiat quo voluptatum itaque deserunt possimus quidem nulla.</p>
+		</article>
+	</section>
+	
+	<div id="top">
+		<a href="#">맨 위로</a>
+	</div>
+	<script>
+	/* 
+		이벤트 입력방식
+		I.자바스크립트 : 이벤트 핸들러, 이벤트 리스너, 인라인 이벤트
+		II.제이쿼리 : 단일 이벤트(click), 그룹 이벤트(on)
+		※ .hover()     .click()      .on()
+		
+		- 메소드 탐색 : 찾고~ 좀더 깊게 정확하게 찾는것
+		
+		.children() : 자식 요소들 선택자
+		.children("필터링") : 자식 요소들중 해당하는 것만 찾는 선택자
+		
+		- 메소드 조작
+		
+		.addClass(), .removeClass(), .toggleClass() : addClass+removeClass 동시에		
+		.hasClass() : class 유무를 true, false 처리
+		
+		- 효과 메소드
+		.animate()
+		
+	*/
+	
+	$(function(){
+		scrollInit();
+		gnb();
+		topBtn();
+	});
+	function scrollInit(){
+		console.log($(".header-outer").outerHeight());
+		$(window).scroll(function(){
+			let sct = $(this).scrollTop();
+			if(parseInt(sct) > parseInt($(".header-outer").outerHeight()) + 50) {
+				$(".header-outer").addClass("fixed-top")
+			} else {
+				$(".header-outer").removeClass("fixed-top")				
+			}
+		});
+	}
+	function topBtn(){
+		$("#top").click(function(e){ // #top을 클릭하면, 아래 코드 실행(callback)
+			e.preventDefault()
+			//화면 스크롤을 페이지 상단까지 부드럽게 이동시켜!
+			$("html, body").animate({
+				scrollTop: 0
+			});
+		})
+	}
+		
+	function gnb(){
+		$("#gnb > li").hover(
+				function(){ // mouseenter
+					$(this).addClass("on");
+					$(this).children(".lnb").css("display","block");
+				},
+				function(){ // mouseleave
+					$(this).removeClass("on");
+					$(this).children(".lnb").css("display","none");
+				}
+			);
+			$("#gnb > li").click(function(e){
+				e.preventDefault()
+				// 자식요소중 .lnb에 li에 a가 갖고있는 href 값을 찾아서,
+				const childUL = $(this).children(".lnb");
+				const childLI = childUL.children();
+				const childFirstHref = childLI.first().children().attr("href"); // DOM 조작
+				// undefined, null, "", 0 : 항상 false, 그외는 항상 true
+				if(childFirstHref) {
+					location.href = childFirstHref; // BOM > location 객체 > .href 프로퍼티					
+				}
+			});
+			
+			$(".lnb > li").click(function(){
+				location.href = $(this).children("a").attr("href")
+			})
+	}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

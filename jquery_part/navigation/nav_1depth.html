@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>제이쿼리 1단 내비게이션</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>제이쿼리 내비게이션 실습</h1>
+	<p>1단 내비게이션 실습</p>
+	
+	<ul id="gnb">
+		<li><a href="https://naver.com" data-target="naver_part">네이버</a></li>
+		<li><a href="https://daum.net">다음</a></li>
+		<li><a href="https://google.co.kr">구글</a></li>
+		<li><a href="http://nate.com">네이트</a></li>
+	</ul>
+	
+	<script>
+		// .css() : 스타일 조작  <---> 객체.style   vs   객체.computedStyle()
+		// .attr() : 속성 조작   <--->  .getAttribute(), .setAttribute()
+		// .text() : 내용(텍스트) 조작 <---> 객체.innerText, 객체.textContent
+		// .html() : HTML 조작   <---> .innerHTML
+		// .val() : 폼의 입력값(value) 조작 <---> 객체.value
+		// .prop : 폼의 상태,값 조작
+
+		// .children() : 자식요소들 선택자 $("대상 li")
+		
+		// .preventDefault() : a 태그의 기본 사이트 이동 이벤트를 중지		
+		// window.open() vs window.close() : 새 창(=탭) 열기 vs 닫기
+		
+		const siteURL = [
+			"naver.com",
+			"daum.net",
+			"google.com",
+			"nate.com"
+		]
+		$(function(){
+		
+			$("#gnb > li").click(function(e){
+				e.preventDefault()
+				const siteName = $(this).children().text()
+				// const url = $(this).children().attr("href");
+				let ind = $(this).index();
+				const url = "http://"+siteURL[ind];
+
+				location.href = url
+				//새탭 이동 window.open("https://"+url,siteName)
+				
+			})
+			
+		})
+	</script>
+</body>
+</html>
+
+
+
+
